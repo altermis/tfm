@@ -77,11 +77,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-CORS_ALLOW_ALL_ORIGINS = True  #per a conexio, editar amb url estil http://localhost:19000 per millor seguretat
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:19000",  # React Native en Expo 
-#     "http://127.0.0.1:19000",
-# ]
+CORS_ALLOW_ALL_ORIGINS = True  #per a conexio, no es molt segur millorar amb ip de react native
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -146,14 +143,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#     ),
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.IsAuthenticated',
-#     ),
-# }
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -166,8 +155,8 @@ REST_FRAMEWORK = {
 }
 
 
-DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024  
-FILE_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
+# DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024  
+# FILE_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
 
 LOGGING = {
     'version': 1,
@@ -177,7 +166,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': 'errors.log',  # Es crea a l’arrel del projecte
+            'filename': 'errors.log',  
         },
         'console': {
             'level': 'DEBUG',
