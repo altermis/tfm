@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getToken, clearToken, storeToken } from './tokenStorage';
 import { decode as atob } from 'base-64';
 
+
 export const AuthContext = createContext(null);
 
 const TOKEN_KEY = 'userToken';
@@ -18,7 +19,8 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     await clearToken();      
-    setUserToken(null);      
+    setUserToken(null); 
+    // resetToLogin();     
   };
   const isTokenExpired = (token) => {
     try {
@@ -43,6 +45,19 @@ export const AuthProvider = ({ children }) => {
     };
     checkToken();
   }, []);
+
+  useEffect(() => {
+    const checkTokenInterval = setInterval(async () => {
+      const token = await getToken();
+      if (token && isTokenExpired(token)) {
+        console.log('Token caducat (interval), fent logout...');
+        await logout();
+      }
+    }, 5000); // Comprova cada 5 segons
+  
+    return () => clearInterval(checkTokenInterval);
+  }, []);
+  
 
   return (
     <AuthContext.Provider value={{ userToken, login, logout, loading }}>
