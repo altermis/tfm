@@ -1,0 +1,41 @@
+export const lightTheme = {
+  colors: {
+    background: '#e1fee3',
+    text: '#000000',
+    primary: '#4CAF50',
+    buttonBackground: '#4CAF50',
+    buttonText: '#ffffff',
+  },
+  button: {
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+};
+
+export const darkTheme = {
+  colors: {
+    background: '#115a17',
+    text: '#ffffff',
+    primary: '#1e90ff',
+    buttonBackground: '#103a13',
+    buttonText: '#ffffff',
+  },
+  button: {
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+};
