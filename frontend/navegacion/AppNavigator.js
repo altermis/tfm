@@ -110,7 +110,8 @@ import RegisterScreen from '../pantallas/registro';
 
 import NoRippleButton from './NoRippleButton';
 import { useTheme } from '../config/contextoEstilo';
-import { PlantDefaultTheme, PlantDarkTheme } from '../config/temasnavegacion';
+
+import { PlantDefaultTheme, PlantDarkTheme } from '../config/estilo';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthContext } from '../config/AuthContext';

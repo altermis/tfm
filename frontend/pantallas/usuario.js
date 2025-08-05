@@ -1,54 +1,5 @@
-
-// import React from 'react';
-// import { View, Text, StyleSheet, Switch, TouchableOpacity } from 'react-native';
-// import { useTheme } from '../config/contextoEstilo';
-// import { SafeAreaView } from 'react-native-safe-area-context';
-
-// export default function AjustesScreen({ onLogout }) {
-//   const { isDark, toggleTheme, theme } = useTheme();
-
-//   return (
-//     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-//     <View style={styles.header}>
-//         <Text style={[styles.title, { color: theme.colors.text }]}>Perfil</Text>
-//       </View>
-      
-//       <Text style={[styles.sectionTitle, { marginTop: 25, color: theme.colors.text }]}>
-//         Configuració de l'aplicació
-//       </Text>
-//       <View style={styles.settingRow}>
-//         <Text style={[styles.settingText, { color: theme.colors.text }]}>Mode fosc</Text>
-//         <Switch
-//           value={isDark}
-//           onValueChange={toggleTheme}
-//           trackColor={{ false: '#aaa', true: theme.colors.primary }}
-//           thumbColor={isDark ? '#ffffff' : '#f4f3f4'}
-//         />
-//       </View>
-
-//       <Text style={[styles.sectionTitle, { color: theme.colors.text }]}>Usuari</Text>
-//       <View style={styles.logout}>
-//         <TouchableOpacity onPress={onLogout}>
-//           <Text style={[styles.logoutText, { color: theme.colors.primary }]}>Tancar sessió</Text>
-//         </TouchableOpacity>
-//       </View>
-
-//       <Text style={[styles.sectionTitle, { color: theme.colors.text }]}>Suport</Text>
-//       <View style={styles.supportBox}>
-//         <Text style={[styles.settingText, { color: theme.colors.text }]}>
-//           Tens algun problema o dubte?
-//         </Text>
-//         <Text style={[styles.supportText, { color: theme.colors.primary }]}>
-//           Contacta amb nosaltres: suport@tfm.com
-//         </Text>
-//       </View>
-
-//     </SafeAreaView>
-//   );
-// }
-
 import React, { useContext } from 'react';
-import { AuthContext } from '../config/AuthContext';  // ruta segons la teva estructura
+import { AuthContext } from '../config/AuthContext'; 
 import { View, Text, StyleSheet, Switch, TouchableOpacity } from 'react-native';
 import { useTheme } from '../config/contextoEstilo';
 import { SafeAreaView } from 'react-native-safe-area-context';
