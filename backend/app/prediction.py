@@ -14,7 +14,7 @@ with open(CLASS_INDEX_PATH, 'r') as f:
 index_to_class = {v: k for k, v in class_indices.items()}
 
 
-CONFIDENCE_THRESHOLD = 0.6
+CONFIDENCE_THRESHOLD = 0.75
 
 def predict_image(image_file):
     img = Image.open(image_file).resize((128, 128))
@@ -26,7 +26,7 @@ def predict_image(image_file):
     confidence = float(np.max(prediction))
 
     if confidence < CONFIDENCE_THRESHOLD:
-        predicted_class = "Desconocido"
+        predicted_class = "Desconegut"
     else:
         predicted_class = index_to_class[predicted_index]
 

@@ -16,7 +16,7 @@ class PredictionSerializer(serializers.ModelSerializer):
         model = Prediction
         fields = ['id', 'image', 'result', 'created_at']
 
-# mensatge error login custom al valencia ja que al ser de una llibreria els mensatges estan en angles falta implementar be
+
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         try:
