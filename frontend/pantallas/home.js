@@ -8,15 +8,12 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { diagnosticMap } from '../data/diagnostics';
 import { useRefresh } from '../config/RefreshContext';
 
-
-
 export default function HomeScreen() {
   const { theme } = useTheme();
   const [imageUri, setImageUri] = useState(null);
   const [result, setResult] = useState(null);
   const { setRefreshNeeded } = useRefresh();
  
-
   const pickImage = async () => {
     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!permission.granted) {
@@ -25,8 +22,9 @@ export default function HomeScreen() {
     }
   
     const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
       allowsEditing: true,
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      quality: 1,
     });
   
     if (!result.canceled && result.assets?.length > 0) {
@@ -38,13 +36,14 @@ export default function HomeScreen() {
   const takePhoto = async () => {
     const permission = await ImagePicker.requestCameraPermissionsAsync();
     if (!permission.granted) {
-      alert('Es necessita permís per usar la càmera');
+      alert('Es necessita permís per a utilitzar la càmera');
       return;
     }
   
     const result = await ImagePicker.launchCameraAsync({
+      mediaTypes: ['images'],
       allowsEditing: true,
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      quality: 1,
     });
   
     if (!result.canceled && result.assets?.length > 0) {
@@ -52,31 +51,16 @@ export default function HomeScreen() {
       setResult(null);
     }
   };
+  
 
   const handlePredict = async () => {
     if (!imageUri) return;
-
+  
     try {
       const data = await predictImage(imageUri);
-
-      let parsedResult = null;
-
-      try {
-        if (typeof data.result === 'string') {
-          parsedResult = JSON.parse(data.result.replace(/'/g, '"'));
-        } else {
-          parsedResult = data.result;
-        }
-      } catch (e) {
-        console.error('Error al parsejar result:', e);
-        setResult({
-          title: 'Error en el format de la resposta',
-          recommendation: null,
-          confidence: 0,
-        });
-        return;
-      }
-
+  
+      const parsedResult = data.result; 
+  
       if (parsedResult?.class) {
         const info = diagnosticMap[parsedResult.class] || {};
         setResult({
@@ -85,7 +69,7 @@ export default function HomeScreen() {
           recommendation: info.recommendation || null,
           confidence: parsedResult.confidence,
         });
-
+  
         setRefreshNeeded(true);
       } else {
         setResult({
@@ -96,7 +80,6 @@ export default function HomeScreen() {
       }
     } catch (error) {
       console.error('Error en la predicció:', error.message);
-
       setResult({
         title: 'Error de connexió o autenticació',
         recommendation: null,
@@ -104,6 +87,7 @@ export default function HomeScreen() {
       });
     }
   };
+  
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>

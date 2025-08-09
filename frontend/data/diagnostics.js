@@ -52,7 +52,7 @@ export const diagnosticMap = {
     recommendation: "Elimina sarments infectats i aplica tractaments fúngics."
   },
   "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
-    title: "Taca foliar d’isariopsis a la vinya",
+    title: "Taca foliar d'isariopsis a la vinya",
     recommendation: "Aplica fungicides i elimina fulles malaltes."
   },
   "Grape___healthy": {
@@ -136,7 +136,7 @@ export const diagnosticMap = {
     recommendation: "Aplica acaricides i mantingues la planta neta."
   },
   "Tomato___Target_Spot": {
-    title: "Taca en blanc al tomàquet (Target Spot)",
+    title: "Taca en blanc al tomàquet",
     recommendation: "Tracta amb fungicides i elimina parts afectades."
   },
   "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {

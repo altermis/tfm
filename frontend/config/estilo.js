@@ -4,9 +4,11 @@ export const lightTheme = {
   colors: {
     background: '#e1fee3',
     text: '#000000',
+    subtle: '#666666',
     primary: '#4CAF50',
     buttonBackground: '#4CAF50',
     buttonText: '#ffffff',
+    card: '#A8D5BA',
   },
   button: {
     paddingVertical: 12,
@@ -25,9 +27,11 @@ export const darkTheme = {
   colors: {
     background: '#115a17',
     text: '#ffffff',
+    subtle: '#BBBBBB',
     primary: '#1e90ff',
     buttonBackground: '#103a13',
     buttonText: '#ffffff',
+    card: '#1B3A28', 
   },
   button: {
     paddingVertical: 12,

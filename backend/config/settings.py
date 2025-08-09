@@ -18,10 +18,7 @@ from datetime import timedelta
 
 # gestio duracio tokens
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(seconds=300),  
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': False,
-    'BLACKLIST_AFTER_ROTATION': False,
+    'ACCESS_TOKEN_LIFETIME': timedelta(seconds=3000),  
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
@@ -88,7 +85,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-CORS_ALLOW_ALL_ORIGINS = True  #per a conexio, no es molt segur millorar amb ip de react native
+ #per a conexio, no es molt segur millorar amb ip de react native
+CORS_ALLOW_ALL_ORIGINS = True 
 
 
 # Database
