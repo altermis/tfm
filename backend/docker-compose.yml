@@ -13,7 +13,7 @@ services:
       - db
 
   nginx:
-    image: nginx:latest
+    image: nginx:alpine
     container_name: tfm_nginx
     ports:
       - "80:80"
