@@ -3,4 +3,4 @@ docker-compose up --build
 
 cd frontend
 npm install
-npx expo sta
+npx expo start

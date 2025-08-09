@@ -12,6 +12,17 @@ services:
     depends_on:
       - db
 
+  nginx:
+    image: nginx:latest
+    container_name: tfm_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./media:/app/media
+    depends_on:
+      - web
+      
   db:
     image: postgres:15
     container_name: tfm_postgres
