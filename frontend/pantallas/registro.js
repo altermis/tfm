@@ -31,7 +31,7 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <Text style={[styles.title, { color: theme.colors.text }]}>Registrar-se</Text>
+      <Text style={[styles.title, { color: theme.colors.text }]}>Registra't</Text>
 
       <TextInput
         placeholder="Nom d'usuari"
