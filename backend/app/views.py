@@ -2,7 +2,7 @@ import logging
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import AccessToken
 from django.contrib.auth.models import User
 from django.core.exceptions import RequestDataTooBig
 from .models import Prediction
@@ -36,12 +36,12 @@ class RegisterView(APIView):
             return Response({"error": "Nom d'usuari ja registrat"}, status=400)
 
         user = User.objects.create_user(username=username, password=password)
-        refresh = RefreshToken.for_user(user)
+        access = AccessToken.for_user(user)  
+
         logger.info(f"Nou registre: {username}")
         return Response({
             "user": UserSerializer(user).data,
-            "refresh": str(refresh),
-            "access": str(refresh.access_token)
+            "access": str(access)
         }, status=201)
 
 class PredictView(APIView):
