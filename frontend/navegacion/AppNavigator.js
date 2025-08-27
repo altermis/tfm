@@ -51,7 +51,7 @@ const MainTabs = () => {
         tabBarInactiveTintColor: isDark ? '#87E2B4' : '#5C9E7C',
       }}
     >
-      <Tab.Screen name="Inicio" component={HomeScreen} />
+      <Tab.Screen name="Diagnòstic" component={HomeScreen} />
       <Tab.Screen name="Historial" component={HistoryScreen} />
       <Tab.Screen name="Perfil">
         {(props) => <UsuarioScreen {...props} onLogout={logout} />}

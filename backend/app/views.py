@@ -1,4 +1,6 @@
 import logging
+import time
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -48,19 +50,15 @@ class PredictView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        start_time = time.time()
         try:
             image = request.FILES.get('image')
             if not image:
-                return Response({"error": "La imatge es necesaria"}, status=400)
-
-
-            # MAX_IMAGE_SIZE = 5 * 1024 * 1024  
-            # if image.size > MAX_IMAGE_SIZE:
-            #     return Response({"error": "Image too large (max 5MB)."}, status=413)
+                return Response({"error": "La imatge és necessària"}, status=400)
 
             valid_types = ['jpeg', 'png']
             if imghdr.what(image) not in valid_types:
-                return Response({"error": "Format invalid."}, status=400)
+                return Response({"error": "Format invàlid."}, status=400)
 
             result = predict_image(image)
 
@@ -69,18 +67,16 @@ class PredictView(APIView):
                 image=image,
                 result=result
             )
-            logger.info(f"Predicció realitzada per {request.user.username}: {result}")
             serializer = PredictionSerializer(prediction)
+
+            elapsed = time.time() - start_time
+            logger.info(f"Temps de resposta predict(): {elapsed:.2f} segons")
+
             return Response(serializer.data)
 
-        # except RequestDataTooBig:
-        #     logger.warning(f"Fitxer massa gran enviat per {request.user.username}")
-        #     return Response({"error": "Image masa gran."}, status=413)
         except Exception as e:
             logger.error(f"Error en la predicció: {str(e)}", exc_info=True)
-            # return Response({"error": str(e)}, status=500)
             return Response({"error": "S'ha produït un error intern"}, status=500)
-
 
 class StandardResultsSetPagination(PageNumberPagination):
     page_size = 10  
