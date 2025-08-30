@@ -1,34 +1,34 @@
 export const diagnosticMap = {
   "Apple___Apple_scab": {
-    title: "Mufla de la poma",
-    recommendation: "Tracta amb fungicides específics i mantingues la planta ben ventilada."
+    title: "Taques del pomer",
+    recommendation: "Tracta amb fungicides específics i mantén la planta ben ventilada."
   },
   "Apple___Black_rot": {
-    title: "Podridura negra a la poma",
+    title: "Podridura negra del pomer",
     recommendation: "Retira les parts afectades i aplica fungicides adequats."
   },
   "Apple___Cedar_apple_rust": {
-    title: "Óxid de poma i cedre",
+    title: "Òxid del pomer i cedre",
     recommendation: "Controla la humitat i elimina cedres propers per evitar la propagació."
   },
   "Apple___healthy": {
-    title: "Poma saludable",
+    title: "Pomer saludable",
     recommendation: "La planta està sana. Continua amb els bons hàbits de cura."
   },
   "Blueberry___healthy": {
-    title: "Aràndano saludable",
+    title: "Nabiu saludable",
     recommendation: "Sense signes de malalties."
   },
   "Cherry_(including_sour)___Powdery_mildew": {
-    title: "Mildeu polvorós en cirerers",
+    title: "Mildeu polvorós al cirerer",
     recommendation: "Aplica fungicides i evita l’excés d’humitat."
   },
   "Cherry_(including_sour)___healthy": {
-    title: "Cirera saludable",
+    title: "Cirer saludable",
     recommendation: "La planta està sana."
   },
   "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
-    title: "Taca grisa de fulla de blat de moro",
+    title: "Taca grisa de fulla del blat de moro",
     recommendation: "Controla la humitat i aplica fungicides específics."
   },
   "Corn_(maize)___Common_rust_": {
@@ -48,7 +48,7 @@ export const diagnosticMap = {
     recommendation: "Retira les parts infectades i aplica fungicides."
   },
   "Grape___Esca_(Black_Measles)": {
-    title: "Esca (Mesquines negres) de la vinya",
+    title: "Esca (mesquines negres) de la vinya",
     recommendation: "Elimina sarments infectats i aplica tractaments fúngics."
   },
   "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
@@ -64,16 +64,16 @@ export const diagnosticMap = {
     recommendation: "Controla els vectors i elimina arbres infectats."
   },
   "Peach___Bacterial_spot": {
-    title: "Taca bacteriana del préssec",
+    title: "Taca bacteriana de la Bresquilla",
     recommendation: "Aplica bactericides i elimina fulles afectades."
   },
   "Peach___healthy": {
-    title: "Préssec saludable",
+    title: "Bresquilla saludable",
     recommendation: "La planta està sana."
   },
   "Pepper,_bell___Bacterial_spot": {
     title: "Taca bacteriana del pebrot",
-    recommendation: "Aplica bactericides i mantingues la zona neta."
+    recommendation: "Aplica bactericides i mantén la zona neta."
   },
   "Pepper,_bell___healthy": {
     title: "Pebrot saludable",
@@ -96,7 +96,7 @@ export const diagnosticMap = {
     recommendation: "Sense signes de malalties."
   },
   "Soybean___healthy": {
-    title: "Mongeta soja saludable",
+    title: "Soja saludable",
     recommendation: "Sense malalties detectades."
   },
   "Squash___Powdery_mildew": {
@@ -113,7 +113,7 @@ export const diagnosticMap = {
   },
   "Tomato___Bacterial_spot": {
     title: "Taca bacteriana al tomàquet",
-    recommendation: "Aplica bactericides i mantingues la zona neta."
+    recommendation: "Aplica bactericides i mantén la zona neta."
   },
   "Tomato___Early_blight": {
     title: "Taca precoç al tomàquet",
@@ -132,8 +132,8 @@ export const diagnosticMap = {
     recommendation: "Retira fulles afectades i aplica fungicides."
   },
   "Tomato___Spider_mites Two-spotted_spider_mite": {
-    title: "Àcars al tomàquet (Àcar de dues taques)",
-    recommendation: "Aplica acaricides i mantingues la planta neta."
+    title: "Àcars al tomàquet (àcar de dues taques)",
+    recommendation: "Aplica acaricides i mantén la planta neta."
   },
   "Tomato___Target_Spot": {
     title: "Taca en blanc al tomàquet",
