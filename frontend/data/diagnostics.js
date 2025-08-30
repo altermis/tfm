@@ -17,7 +17,7 @@ export const diagnosticMap = {
   },
   "Blueberry___healthy": {
     title: "Nabiu saludable",
-    recommendation: "Sense signes de malalties."
+    recommendation: "Sense malalties detectades."
   },
   "Cherry_(including_sour)___Powdery_mildew": {
     title: "Mildeu polvorós al cirerer",
@@ -57,7 +57,7 @@ export const diagnosticMap = {
   },
   "Grape___healthy": {
     title: "Vinya saludable",
-    recommendation: "Sense signes de malalties."
+    recommendation: "Sense malalties detectades."
   },
   "Orange___Haunglongbing_(Citrus_greening)": {
     title: "Greening (Haunglongbing) de la taronja",
@@ -93,7 +93,7 @@ export const diagnosticMap = {
   },
   "Raspberry___healthy": {
     title: "Gerd saludable",
-    recommendation: "Sense signes de malalties."
+    recommendation: "Sense malalties detectades."
   },
   "Soybean___healthy": {
     title: "Soja saludable",
@@ -124,7 +124,7 @@ export const diagnosticMap = {
     recommendation: "Actua ràpidament amb fungicides i elimina parts malaltes."
   },
   "Tomato___Leaf_Mold": {
-    title: "Molta foliar al tomàquet",
+    title: "Mildeu foliar al tomàquet",
     recommendation: "Controla la humitat i aplica fungicides."
   },
   "Tomato___Septoria_leaf_spot": {
